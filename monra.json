@@ -1,0 +1,13 @@
+{
+    "name": "monra",
+    "version": "1.0.0",
+    "client": "yarn",
+    "directory": "packages",
+    "packages": [
+        {
+            "name": "@monra/utils",
+            "path": "packages/utils"
+        }
+    ],
+    "language": "typescript"
+}

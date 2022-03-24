@@ -1,0 +1,1 @@
+export const init = (x: string) => {};
