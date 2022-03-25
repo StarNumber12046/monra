@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Mono Repo Administrator",
   "bin": {
-    "monra": ""
+    "monra": "./dist/index.js"
   },
   "scripts": {
-    "dev": "tsc && ts-node ./src/index.ts"
+    "dev": "tsc -w"
   },
-  "main": "index.js",
+  "main": "./dist/index.js",
   "repository": "https://github.com/Thebigbot0000/monra",
   "author": "Thebigbot",
   "license": "MIT",
