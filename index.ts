@@ -2,24 +2,24 @@ import { Command } from "nvea";
 import { version } from "./command/version";
 import { create } from "./command/create";
 import { init } from "./command/init";
-import { list } from "./command/list";
+import { _delete } from "./command/delete";
 import { publish } from "./command/publish";
 import { exit } from "node:process";
 
 
-new Command({ name: "init", aliases: ["-i", "--init", "--i", "-init"] })
+new Command({ name: "init", aliases: ["-i", "--init"] })
 .on(res => init(res.args));
 
 new Command({ name: "create", aliases: ["add", "build"] })
 .on(res => create(res.args));
 
-new Command({ name: "list", aliases: ["--list", "-list", "-l", "--l"] })
-.on(res => list(res.args));
+new Command({ name: "delete", aliases: ["d"] })
+.on(res => _delete(res.args));
 
-new Command({ name: "publish", aliases: ["--publish", "-publish", "-p", "--p"] })
+new Command({ name: "publish", aliases: ["--publish", "-p"] })
 .on(res => publish(res.args))
 
-new Command({ name: "version", aliases: ["--version", "-version", "-v", "--v"] })
+new Command({ name: "version", aliases: ["--version", "-v"] })
 .on(res => version(res.args))
 
 /*

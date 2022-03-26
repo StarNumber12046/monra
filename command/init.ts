@@ -1,44 +1,33 @@
-import * as readline from "node:readline";
 import * as fs from "node:fs";
 import { version } from "node:os";
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+import { question } from "readline-sync";
 
 export const init = (x: string) => {
-  rl.question('\x1b[2m[1/4]\x1b[0m \x1b[1mName:\x1b[0m (root) ', (name: any) => {
-    if (!name) name = "root"
-    rl.question('\x1b[2m[2/4]\x1b[0m \x1b[1mVersion:\x1b[0m (1.0.0) ', (v: any) => {
-      if (!v) v = '1.0.0';
-      rl.question('\x1b[2m[3/4]\x1b[0m \x1b[1mDirectory:\x1b[0m (packages) ', (dir: any) => {
-        if (!dir) dir = 'packages';
-        rl.question('\x1b[2m[4/4]\x1b[0m \x1b[1mUse yarn or npm:\x1b[0m (npm) ', (client: any) => {
-          if (!client) client = 'npm';
-          fs.appendFileSync("package.json", JSON.stringify({
-            name: name.toLowerCase(),
-            private: true,
-            dependencies: {},
-            workspaces: [dir.toLowerCase()+"/*"]
-          }));
+  let name = question('\x1b[2m[1/4]\x1b[0m \x1b[1mName:\x1b[0m (root) ');
+  if (!name) name = "root";
+  let v = question('\n\x1b[2m[2/4]\x1b[0m \x1b[1mVersion:\x1b[0m (1.0.0) ');
+  if (!v) v = "1.0.0";
+  let dir = question('\n\x1b[2m[3/4]\x1b[0m \x1b[1mDirectory:\x1b[0m (packages) ');
+  if (!dir) dir = "packages";
+  let client = question('\n\x1b[2m[4/4]\x1b[0m \x1b[1mUse yarn or npm:\x1b[0m (npm) ');
+  if (!client) client = "npm";
+  fs.appendFileSync("package.json", JSON.stringify({
+    name: name.toLowerCase(),
+    private: true,
+    dependencies: {},
+    workspaces: [dir.toLowerCase()+"/*"]
+  }));
 
-          fs.appendFileSync("monra.json", JSON.stringify({
-            name: name.toLowerCase(),
-            version: v.toLowerCase(),
-            client: client.toLowerCase(),
-            directory: dir.toLowerCase(),
-            packages: []
-          }));
+  fs.appendFileSync("monra.json", JSON.stringify({
+    name: name.toLowerCase(),
+    version: v.toLowerCase(),
+    client: client.toLowerCase(),
+    directory: dir.toLowerCase(),
+  }));
 
-          fs.mkdirSync(dir.toLowerCase())
+  fs.mkdirSync(dir.toLowerCase())
 
-          console.log("\x1b[32m[monra]\x1b[0m Create mono repo project!");
-          rl.close()
-        });
-      });
-    });
-  });
+  console.log("\n\x1b[32m[monra]\x1b[0m Create mono repo project!");
 };
 
 /*

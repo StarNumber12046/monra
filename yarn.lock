@@ -12,6 +12,11 @@ nvea@^1.0.1:
   resolved "https://registry.yarnpkg.com/nvea/-/nvea-1.0.1.tgz#43ac11e9eb85aa64fb28ebe8d1748605ad3411f0"
   integrity sha512-2hSZNvRiFK8MrqnVYvKjlHKqAAiaSXEu4WwBOeyWYf/DrPZPprWQ2MNwMuxre1LG4XMrFUiyL/XEwxAKM98VCA==
 
+readline-sync@^1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/readline-sync/-/readline-sync-1.4.10.tgz#41df7fbb4b6312d673011594145705bf56d8873b"
+  integrity sha512-gNva8/6UAe8QYepIQH/jQ2qn91Qj0B9sYjMBBs3QOB8F2CXcKgLxQaJRP76sWVRQt+QU+8fAkCbCvjjMFu7Ycw==
+
 tslib@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"

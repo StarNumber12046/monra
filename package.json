@@ -15,8 +15,7 @@
   "dependencies": {
     "@types/node": "^17.0.23",
     "nvea": "^1.0.1",
+    "readline-sync": "^1.4.10",
     "tslib": "^2.3.1"
   }
 }
-
-
