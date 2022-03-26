@@ -1,23 +1,26 @@
 import { Command } from "nvea";
+import { version } from "./command/version";
 import { create } from "./command/create";
 import { init } from "./command/init";
 import { list } from "./command/list";
 import { publish } from "./command/publish";
+import { exit } from "node:process";
+
 
 new Command({ name: "init", aliases: ["-i", "--init", "--i", "-init"] })
-.on(res => init(res));
+.on(res => init(res.args));
 
 new Command({ name: "create", aliases: ["add", "build"] })
-.on(res => create(res));
+.on(res => create(res.args));
 
 new Command({ name: "list", aliases: ["--list", "-list", "-l", "--l"] })
-.on(res => list(res));
+.on(res => list(res.args));
 
 new Command({ name: "publish", aliases: ["--publish", "-publish", "-p", "--p"] })
-.on(res => publish(res))
+.on(res => publish(res.args))
 
 new Command({ name: "version", aliases: ["--version", "-version", "-v", "--v"] })
-.on(res => publish(res))
+.on(res => version(res.args))
 
 /*
 {

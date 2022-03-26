@@ -1,1 +1,1 @@
-{"name":"stuff","private":true,"dependencies":{},"workspaces":["packages/*"]}
+{"name":"root","private":true,"dependencies":{},"workspaces":["packages/*"]}

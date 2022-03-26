@@ -8,6 +8,5 @@
             "name": "@monra/utils",
             "path": "packages/utils"
         }
-    ],
-    "language": "typescript"
+    ]
 }
