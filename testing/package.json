@@ -1,8 +1,1 @@
-{
-  "name": "root",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "version": "1.0.0"
-}
+{"name":"root","private":true,"dependencies":{"@root/secx":"file:packages/secx","@root/secxy":"file:packages/secxy"},"workspaces":["packages/*"]}
