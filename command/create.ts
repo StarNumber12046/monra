@@ -7,6 +7,7 @@ import { exit } from "node:process";
 import { question } from "readline-sync";
 
 /**
+ * @name Create
  * @param {string} x - res.args
  * @description Create new package
 */

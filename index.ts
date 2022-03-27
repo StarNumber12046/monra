@@ -6,6 +6,7 @@ import { _delete } from "./command/delete";
 import { publish } from "./command/publish";
 import { exit } from "node:process";
 import { list } from "./command/list";
+import { help } from "./command/help";
 
 
 new Command({ name: "init", aliases: ["-i", "--init"] })
@@ -22,6 +23,9 @@ new Command({ name: "publish", aliases: ["--publish", "-p"] })
 
 new Command({ name: "version", aliases: ["--version", "-v"] })
 .on(res => version(res.args))
+
+new Command({ name: "help", aliases: ["--help", "-h"] })
+.on(res => help(res.args))
 
 new Command({ name: "list", aliases: ["--list", "-l"] })
 .on(res => list(res.args))

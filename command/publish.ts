@@ -6,6 +6,7 @@ import * as fs from "node:fs";
 import { stderr, stdin } from "process";
 
 /**
+ * @name Publish
  * @param {string} x - res.args
  * @description Publish all packages
 */

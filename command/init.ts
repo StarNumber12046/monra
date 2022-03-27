@@ -6,6 +6,7 @@ import { version } from "node:os";
 import { question } from "readline-sync";
 
 /**
+ * @name Init
  * @param {string} x - res.args
  * @description Init project with monra
 */
