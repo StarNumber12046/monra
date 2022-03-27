@@ -1,7 +1,15 @@
+// @ts-check
+
+
 import * as fs from "node:fs";
 import { execSync } from "node:child_process";
 import { exit } from "node:process";
 import { question } from "readline-sync";
+
+/**
+ * @param {string} x - res.args
+ * @description Create new package
+*/
 
 export const create = (x: string) => {
     const packages = JSON.parse(fs.readFileSync("package.json", "utf8"));
@@ -25,11 +33,15 @@ export const create = (x: string) => {
             verison: v
         }))
         if (monra?.client == "yarn") {
-            execSync("yarn add "+name)
+            execSync("yarn add "+name+" -W")
         }
 
         if (monra?.client == "npm") {
             execSync("npm i "+name)
+        }
+
+        if (monra?.client == "pnpm") {
+            execSync("pnpm add "+name)
         }
 
         console.log("\n\x1b[32m[monra]\x1b[0m Create package!");
@@ -48,7 +60,8 @@ export const create = (x: string) => {
             verison: v
         }))
         if (monra?.client == "yarn") {
-            execSync("yarn add "+name)
+            execSync("yarn install")
+            execSync("yarn add "+name+" -W")
         }
 
         if (monra?.client == "npm") {

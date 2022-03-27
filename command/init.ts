@@ -1,6 +1,14 @@
+// @ts-check
+
+
 import * as fs from "node:fs";
 import { version } from "node:os";
 import { question } from "readline-sync";
+
+/**
+ * @param {string} x - res.args
+ * @description Init project with monra
+*/
 
 export const init = (x: string) => {
   let name = question('\x1b[2m[1/4]\x1b[0m \x1b[1mName:\x1b[0m (root) ');
@@ -9,7 +17,7 @@ export const init = (x: string) => {
   if (!v) v = "1.0.0";
   let dir = question('\n\x1b[2m[3/4]\x1b[0m \x1b[1mDirectory:\x1b[0m (packages) ');
   if (!dir) dir = "packages";
-  let client = question('\n\x1b[2m[4/4]\x1b[0m \x1b[1mUse yarn or npm:\x1b[0m (npm) ');
+  let client = question('\n\x1b[2m[4/4]\x1b[0m \x1b[1mUse yarn, pnpm or npm:\x1b[0m (npm) ');
   if (!client) client = "npm";
   fs.appendFileSync("package.json", JSON.stringify({
     name: name.toLowerCase(),

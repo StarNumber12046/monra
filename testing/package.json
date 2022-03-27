@@ -1,1 +1,8 @@
-{"name":"root","private":true,"workspaces":["packages/*"]}
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "1.0.0"
+}
