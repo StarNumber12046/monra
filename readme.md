@@ -1,10 +1,5 @@
 <div align="center">
-  <br />
-  <p>
-    <a href=""><img src="https://i.imgur.com/OhZsUs7.png)" width="546" alt="monra" /></a>
-  </p>
-  <br />
-  <p>
   <h1>Monra</h1>
-  </p>
+  </br>
+  <p>Cli to edit and create a mono repo project</p>
 </div>
