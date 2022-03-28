@@ -18,18 +18,30 @@ export const _delete = (x: string) => {
         exit()
     } else {
         const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
-        if (monra?.client == "yarn") {
-            execSync("yarn remove "+x[1]);
-        }
-    
-        if (monra?.client == "npm") {
-            execSync("npm remove "+x[1])
+        const packagejs = JSON.parse(fs.readFileSync("package.json", "utf8"));
+
+        const yesorno = question('\x1b[31m[monra]\x1b[0m \x1b[1mAre you sure?\x1b[0m (y/n) ');
+
+        if (yesorno.toLowerCase() == "y" || yesorno.toLowerCase() == "yes" || yesorno.toLowerCase() == "") {
+            const packageint = JSON.parse(fs.readFileSync(monra?.directory+"/"+x[1]+"/package.json", "utf8"));
+            if (monra?.client == "yarn") {
+                execSync("yarn remove "+packageint?.name)
+            }
+
+            if (monra?.client == "npm") {
+                execSync("npm uninstall "+packageint?.name)
+            }
+
+            if (monra?.client == "pnpm") {
+                execSync("pnpm uninstall "+packageint?.name)
+            }
+
+            fs.rmSync(monra?.directory+"/"+x[1], { recursive: true, force: true });
+            console.log("\x1b[32m[monra]\x1b[0m Delete package!");
         }
 
-        if (monra?.client == "pnpm") {
-            execSync("pnpm remove "+x[1])
+        if (yesorno.toLowerCase() == "n" || yesorno == "no") {
+            console.log("\x1b[32m[monra]\x1b[0m Cancel!");
         }
-    
-        console.log("\x1b[32m[monra]\x1b[0m Package delete!")
     }
 }

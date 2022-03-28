@@ -1,3 +1,5 @@
+#!/usr/bin/env ts-node
+
 import { Command } from "nvea";
 import { version } from "./command/version";
 import { create } from "./command/create";
@@ -8,11 +10,10 @@ import { exit } from "node:process";
 import { list } from "./command/list";
 import { help } from "./command/help";
 
-
 new Command({ name: "init", aliases: ["-i", "--init"] })
 .on(res => init(res.args));
 
-new Command({ name: "create", aliases: ["add", "build"] })
+new Command({ name: "create", aliases: ["build"] })
 .on(res => create(res.args));
 
 new Command({ name: "delete", aliases: ["d"] })

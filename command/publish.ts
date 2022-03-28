@@ -1,7 +1,7 @@
 // @ts-check
 
-
-import { exec } from "child_process";
+import { exec, execSync } from "child_process";
+import { existsSync } from "fs";
 import * as fs from "node:fs";
 import { stderr, stdin } from "process";
 
@@ -13,21 +13,19 @@ import { stderr, stdin } from "process";
 
 export const publish = (x: string) => {
     const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
-    if (monra?.client == "yarn") {
-        exec("yarn publish", (e, stdin, stderr) => {
-            console.log("\x1b[32m[monra]\x1b[0m Publish!")
-        })
-    }
+    const files = fs.readdirSync(monra?.directory)
+    files.map((file) => {
+        if (monra?.client == "yarn") {
+            execSync("cd "+monra?.directory+"/"+files+" && yarn publish");
+        }
+    
+        if (monra?.client == "npm") {
+            execSync("cd "+monra?.directory+"/"+files+" && npm publish")
+        }
 
-    if (monra?.client == "npm") {
-        exec("npm publish", (e, stdin, stderr) => {
-            console.log("\x1b[32m[monra]\x1b[0m Publish!")
-        })
-    }
+        if (monra?.client == "pnpm") {
+            execSync("cd "+monra?.directory+"/"+files+" && pnpm publish")
+        }
+    })
+}; 
 
-    if (monra?.client == "npm") {
-        exec("pnpm publish", (e, stdin, stderr) => {
-            console.log("\x1b[32m[monra]\x1b[0m Publish!")
-        })
-    }
-};
