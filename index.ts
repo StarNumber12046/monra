@@ -31,26 +31,4 @@ new Command({ name: "help", aliases: ["--help", "-h"] })
 new Command({ name: "list", aliases: ["--list", "-l"] })
 .on(res => list(res.args))
 
-/*
-{
-  "name": "monra",
-  "version": "1.0.0",
-  "description": "Mono Repo Administrator",
-  "bin": {
-    "monra": "./dist/index.js"
-  },
-  "type": "module",
-  "scripts": {
-    "dev": "tsc -w"
-  },
-  "main": "./dist/index.js",
-  "repository": "https://github.com/Thebigbot0000/monra",
-  "author": "Thebigbot",
-  "license": "MIT",
-  "dependencies": {
-    "@types/node": "^17.0.23",
-    "nvea": "^1.0.1",
-    "tslib": "^2.3.1"
-  }
-}
-*/
+

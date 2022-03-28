@@ -4,6 +4,7 @@ import { exec, execSync } from "child_process";
 import { existsSync } from "fs";
 import * as fs from "node:fs";
 import { stderr, stdin } from "process";
+import { isInit } from "../utils/isInit";
 
 /**
  * @name Publish
@@ -12,6 +13,7 @@ import { stderr, stdin } from "process";
 */
 
 export const publish = (x: string) => {
+    isInit()
     const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
     const files = fs.readdirSync(monra?.directory)
     files.map((file) => {

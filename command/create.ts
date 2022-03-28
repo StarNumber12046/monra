@@ -5,6 +5,8 @@ import * as fs from "node:fs";
 import { execSync } from "node:child_process";
 import { exit } from "node:process";
 import { question } from "readline-sync";
+import { ErrorInit } from "../error/ErrorInit";
+import { isInit } from "../utils/isInit";
 
 /**
  * @name Create
@@ -13,6 +15,7 @@ import { question } from "readline-sync";
 */
 
 export const create = (x: string) => {
+    isInit()
     const packages = JSON.parse(fs.readFileSync("package.json", "utf8"));
     const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
     if (!x[1]) {

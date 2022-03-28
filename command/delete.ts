@@ -5,6 +5,7 @@ import * as fs from "node:fs";
 import { execSync } from "node:child_process";
 import { exit } from "node:process";
 import { question } from "readline-sync";
+import { isInit } from "../utils/isInit";
 
 /**
  * @name Delete
@@ -13,6 +14,7 @@ import { question } from "readline-sync";
 */
 
 export const _delete = (x: string) => {
+    isInit()
     if (!x[1]) {
         console.log("\x1b[31m[monra]\x1b[0m  Directory name is undefined (use: monra delete <directory-name>)");
         exit()
@@ -22,7 +24,7 @@ export const _delete = (x: string) => {
 
         const yesorno = question('\x1b[31m[monra]\x1b[0m \x1b[1mAre you sure?\x1b[0m (y/n) ');
 
-        if (yesorno.toLowerCase() == "y" || yesorno.toLowerCase() == "yes" || yesorno.toLowerCase() == "") {
+        if (yesorno == "y" || yesorno == "yes" || yesorno == "") {
             const packageint = JSON.parse(fs.readFileSync(monra?.directory+"/"+x[1]+"/package.json", "utf8"));
             if (monra?.client == "yarn") {
                 execSync("yarn remove "+packageint?.name)
@@ -40,7 +42,7 @@ export const _delete = (x: string) => {
             console.log("\x1b[32m[monra]\x1b[0m Delete package!");
         }
 
-        if (yesorno.toLowerCase() == "n" || yesorno == "no") {
+        if (yesorno == "n" || yesorno == "no") {
             console.log("\x1b[32m[monra]\x1b[0m Cancel!");
         }
     }
