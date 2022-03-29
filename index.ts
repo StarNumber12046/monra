@@ -9,6 +9,7 @@ import { publish } from "./command/publish";
 import { exit } from "node:process";
 import { list } from "./command/list";
 import { help } from "./command/help";
+import { run } from "./command/run";
 
 new Command({ name: "init", aliases: ["-i", "--init"] })
 .on(res => init(res.args));
@@ -31,4 +32,5 @@ new Command({ name: "help", aliases: ["--help", "-h"] })
 new Command({ name: "list", aliases: ["--list", "-l"] })
 .on(res => list(res.args))
 
-
+new Command({ name: "run", aliases: ["r"] })
+.on(res => run(res.args))

@@ -1,0 +1,1 @@
+{"name":"root","private":true,"dependencies":{"@root/hello":"file:packages/hello","@root/meddile":"file:packages/meddile"},"workspaces":["packages/*"]}
