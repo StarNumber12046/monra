@@ -34,3 +34,4 @@ new Command({ name: "list", aliases: ["--list", "-l"] })
 
 new Command({ name: "run", aliases: ["r"] })
 .on(res => run(res.args))
+
