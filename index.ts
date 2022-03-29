@@ -10,6 +10,7 @@ import { exit } from "node:process";
 import { list } from "./command/list";
 import { help } from "./command/help";
 import { run } from "./command/run";
+import { touch } from "./command/touch";
 
 new Command({ name: "init", aliases: ["-i", "--init"] })
 .on(res => init(res.args));
@@ -35,3 +36,5 @@ new Command({ name: "list", aliases: ["--list", "-l"] })
 new Command({ name: "run", aliases: ["r"] })
 .on(res => run(res.args))
 
+new Command({ name: "touch", aliases: ["t"] })
+.on(res => touch(res.args))

@@ -16,5 +16,6 @@ export const help = (x: string) => {
 ├─ \x1b[2mmonra\x1b[0m \x1b[32mpublish\x1b[0m
 ├─ \x1b[2mmonra\x1b[0m \x1b[32mrun\x1b[0m
 ├─ \x1b[2mmonra\x1b[0m \x1b[32mversion\x1b[0m
+├─ \x1b[2mmonra\x1b[0m \x1b[32mtouch\x1b[0m
 └─ \x1b[2mmonra\x1b[0m \x1b[32mdelete\x1b[0m`)
 };
