@@ -11,6 +11,7 @@ import { list } from "./command/list";
 import { help } from "./command/help";
 import { run } from "./command/run";
 import { touch } from "./command/touch";
+import { mkdir } from "./command/mkdir";
 
 new Command({ name: "init", aliases: ["-i", "--init"] })
 .on(res => init(res.args));
@@ -38,3 +39,6 @@ new Command({ name: "run", aliases: ["r"] })
 
 new Command({ name: "touch", aliases: ["t"] })
 .on(res => touch(res.args))
+
+new Command({ name: "mkdir", aliases: ["mk"] })
+.on(res => mkdir(res.args))
