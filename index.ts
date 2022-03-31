@@ -14,7 +14,7 @@ import { touch } from "./command/touch";
 import { mkdir } from "./command/mkdir";
 import { rm } from "./command/rm";
 
-new Command({ name: "init", aliases: ["-i", "--init"] })
+new Command({ name: "init", aliases: ["i"] })
 .on(res => init(res.args));
 
 new Command({ name: "create", aliases: ["build"] })

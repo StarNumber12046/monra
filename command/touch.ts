@@ -1,6 +1,8 @@
 // @ts-check
 
 import * as fs from "fs";
+import { exit } from "process";
+import { helpSing } from "../utils/helpSing";
 import { isInit } from "../utils/isInit";
 
 /**
@@ -11,6 +13,10 @@ import { isInit } from "../utils/isInit";
 
 export const touch = (x: string) => {
     isInit()
+    if (x[1] == "--help" || x[1] == "-h") {
+        helpSing(7)
+        exit()
+    };
     const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
     if (x[2] == "--global" || x[2] == "-g") {
         const files = fs.readdirSync(monra?.directory)

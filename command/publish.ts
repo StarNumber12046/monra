@@ -3,7 +3,8 @@
 import { exec, execSync } from "child_process";
 import { existsSync } from "fs";
 import * as fs from "node:fs";
-import { stderr, stdin } from "process";
+import { exit, stderr, stdin } from "process";
+import { helpSing } from "../utils/helpSing";
 import { isInit } from "../utils/isInit";
 
 /**
@@ -14,6 +15,10 @@ import { isInit } from "../utils/isInit";
 
 export const publish = (x: string) => {
     isInit()
+    if (x[1] == "--help" || x[1] == "-h") {
+        helpSing(4)
+        exit()
+    };
     const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
     const files = fs.readdirSync(monra?.directory)
     files.map((file) => {

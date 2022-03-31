@@ -1,6 +1,8 @@
 // @ts-check
 
 import * as fs from "node:fs";
+import { exit } from "node:process";
+import { helpSing } from "../utils/helpSing";
 
 /**
  * @name List
@@ -9,6 +11,10 @@ import * as fs from "node:fs";
 */
 
 export const list = (x: string) => {
+    if (x[1] == "--help" || x[1] == "-h") {
+        helpSing(3)
+        exit()
+    };
     const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
     const files = fs.readdirSync(monra?.directory)
     files.map(file => {

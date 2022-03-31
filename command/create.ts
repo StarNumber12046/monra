@@ -1,12 +1,13 @@
 // @ts-check
 
 
-import * as fs from "node:fs";
-import { execSync } from "node:child_process";
-import { exit } from "node:process";
+import * as fs from "fs";
+import { execSync } from "child_process";
+import { exit } from "process";
 import { question } from "readline-sync";
 import { ErrorInit } from "../error/ErrorInit";
 import { isInit } from "../utils/isInit";
+import { helpSing } from "../utils/helpSing";
 
 /**
  * @name Create
@@ -16,6 +17,10 @@ import { isInit } from "../utils/isInit";
 
 export const create = (x: string) => {
     isInit()
+    if (x[1] == "--help" || x[1] == "-h") { 
+        helpSing(2) 
+        exit() 
+    }
     const packages = JSON.parse(fs.readFileSync("package.json", "utf8"));
     const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
     if (!x[1]) {

@@ -6,6 +6,7 @@ import { execSync } from "node:child_process";
 import { exit } from "node:process";
 import { question } from "readline-sync";
 import { isInit } from "../utils/isInit";
+import { helpSing } from "../utils/helpSing";
 
 /**
  * @name Delete
@@ -15,6 +16,10 @@ import { isInit } from "../utils/isInit";
 
 export const _delete = (x: string) => {
     isInit()
+    if (x[1] == "--help" || x[1] == "-h") {
+        helpSing(10)
+        exit()
+    };
     if (!x[1]) {
         console.log("\x1b[31m[monra]\x1b[0m  Directory name is undefined (use: monra delete <directory-name>)");
         exit()

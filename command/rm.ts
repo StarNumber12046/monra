@@ -2,6 +2,8 @@
 
 import * as fs from "fs";
 import { exit } from "process";
+import { helpSing } from "../utils/helpSing";
+import { isInit } from "../utils/isInit";
 
 /**
  * @name Rm
@@ -10,6 +12,11 @@ import { exit } from "process";
 */
 
 export const rm = (x: string) => {
+    isInit()
+    if (x[1] == "--help" || x[1] == "-h") {
+        helpSing(9)
+        exit()
+    };
     const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
     if (x[2] == "--global" || x[2] == "-g") {
         console.log("\x1b[32m[monra]\x1b[0m Removing file...")

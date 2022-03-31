@@ -4,6 +4,7 @@ import { isInit } from "../utils/isInit";
 import { question } from "readline-sync";
 import { exit } from "process";
 import { execFileSync, execSync } from "child_process";
+import { helpSing } from "../utils/helpSing";
 
 /**
  * @name Run
@@ -13,6 +14,10 @@ import { execFileSync, execSync } from "child_process";
 
 export const run = (x: string) => {
     isInit()
+    if (x[1] == "--help" || x[1] == "-h") {
+        helpSing(5)
+        exit()
+    };
     if (x[1] == "--global" || x[1] == "-g") {
         const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
         const command = question('\x1b[2m[1/1]\x1b[0m \x1b[1mCommand\x1b[0m: ');

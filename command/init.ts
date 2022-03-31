@@ -3,7 +3,9 @@
 
 import * as fs from "node:fs";
 import { version } from "node:os";
+import { exit } from "node:process";
 import { question } from "readline-sync";
+import { helpSing } from "../utils/helpSing";
 
 /**
  * @name Init
@@ -12,6 +14,10 @@ import { question } from "readline-sync";
 */
 
 export const init = (x: string) => {
+  if (x[1] == "--help" || x[1] == "-h") {
+    helpSing(1)
+    exit()
+  };
   let name = question('\x1b[2m[1/4]\x1b[0m \x1b[1mName:\x1b[0m (root) ');
   if (!name) name = "root";
   let v = question('\n\x1b[2m[2/4]\x1b[0m \x1b[1mVersion:\x1b[0m (1.0.0) ');
