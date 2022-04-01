@@ -39,7 +39,7 @@ export const create = (x: string) => {
         JSON.stringify({
             name: name.toLowerCase(),
             main: "src/index.js",
-            verison: v
+            version: v
         }))
         if (monra?.client == "yarn") {
             execSync("yarn add "+name+" -W")

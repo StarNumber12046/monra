@@ -28,6 +28,7 @@ export const init = (x: string) => {
   if (!client) client = "npm";
   fs.appendFileSync("package.json", JSON.stringify({
     name: name.toLowerCase(),
+    version: v,
     private: true,
     dependencies: {},
     workspaces: [dir.toLowerCase()+"/*"]
