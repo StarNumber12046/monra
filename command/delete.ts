@@ -21,10 +21,10 @@ export const _delete = (x: string) => {
         exit()
     };
     if (!x[1]) {
-        console.log("\x1b[31m[monra]\x1b[0m  Directory name is undefined (use: monra delete <directory-name>)");
+        console.log("\x1b[31m[monra]\x1b[0m  Package name is undefined (use: monra delete <directory-name>)");
         exit()
     } else {
-        if (x[2] == "-d" || x[2] == "-dir" || x[2] == "--directory") {
+        if (x[2] == "-d" || x[2] == "--directory") {
             const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
             const packagejs = JSON.parse(fs.readFileSync("package.json", "utf8"));
     

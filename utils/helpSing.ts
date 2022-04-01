@@ -104,9 +104,9 @@ export const helpSing = (code: number) => {
         break;
         case 10:
             console.log(`\x1b[1mDelete package\x1b[0m
-\x1b[33mUsage\x1b[0m: monra delete [directory]
-\x1b[33mAliases\x1b[0m: null
-\x1b[33mOptions\x1b[0m: null`)
+\x1b[33mUsage\x1b[0m: monra delete [name]
+\x1b[33mAliases\x1b[0m: d
+\x1b[33mOptions\x1b[0m: -d or --directory (delete from directory name)`)
 
         break;
         default:
