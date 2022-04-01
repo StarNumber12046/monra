@@ -21,13 +21,15 @@ export const _delete = (x: string) => {
         exit()
     };
     if (!x[1]) {
-        console.log("\x1b[31m[monra]\x1b[0m  Package name is undefined (use: monra delete <directory-name>)");
+        console.log("\x1b[31m[monra]\x1b[0m  Package name is undefined (use: monra delete [name])");
         exit()
     } else {
         if (x[2] == "-d" || x[2] == "--directory") {
             const monra = JSON.parse(fs.readFileSync("monra.json", "utf8"));
             const packagejs = JSON.parse(fs.readFileSync("package.json", "utf8"));
-    
+            if (!fs.existsSync(monra?.directory+"/"+x[1])) {
+                console.log("\x1b[31m[monra]\x1b[0m  Package name path don't exist (use: monra delete [path] -d)");
+            }
             const yesorno = question('\x1b[31m[monra]\x1b[0m \x1b[1mAre you sure?\x1b[0m (y/n) ');
     
             if (yesorno == "y" || yesorno == "yes" || yesorno == "") {

@@ -1,1 +1,1 @@
-{"name":"root","private":true,"workspaces":["packages/*"]}
+{"name":"root","private":true,"workspaces":["packages/*"],"dependencies":{"@root/ciao":"file:packages/ciao","@root/ciao8":"file:packages/ciao8"}}

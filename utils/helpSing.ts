@@ -21,6 +21,7 @@ import { exit } from "process";
 8: "mkdir"
 9: "rm"
 10: "delete"
+11: "rmdir"
 */
 
 export const helpSing = (code: number) => {
@@ -107,6 +108,13 @@ export const helpSing = (code: number) => {
 \x1b[33mUsage\x1b[0m: monra delete [name]
 \x1b[33mAliases\x1b[0m: d
 \x1b[33mOptions\x1b[0m: -d or --directory (delete from directory name)`)
+
+        break;
+        case 11:
+            console.log(`\x1b[1mRemove directory in package\x1b[0m
+\x1b[33mUsage\x1b[0m: monra rmdir [name] [directory || -g]
+\x1b[33mAliases\x1b[0m: null
+\x1b[33mOptions\x1b[0m: -g, --global`)
 
         break;
         default:

@@ -13,6 +13,7 @@ import { run } from "./command/run";
 import { touch } from "./command/touch";
 import { mkdir } from "./command/mkdir";
 import { rm } from "./command/rm";
+import { rmdir } from "./command/rmdir";
 
 new Command({ name: "init", aliases: ["i"] })
 .on(res => init(res.args));
@@ -46,3 +47,6 @@ new Command({ name: "mkdir", aliases: ["mk"] })
 
 new Command({ name: "rm", aliases: [] })
 .on(res => rm(res.args))
+
+new Command({ name: "rmdir", aliases: [] })
+.on(res => rmdir(res.args))
