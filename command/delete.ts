@@ -32,7 +32,7 @@ export const _delete = (x: string) => {
         if (yesorno == "y" || yesorno == "yes" || yesorno == "") {
             const packageint = JSON.parse(fs.readFileSync(monra?.directory+"/"+x[1]+"/package.json", "utf8"));
             if (monra?.client == "yarn") {
-                execSync("yarn remove "+packageint?.name)
+                execSync("yarn remove "+packageint?.name+" -W")
             }
 
             if (monra?.client == "npm") {
