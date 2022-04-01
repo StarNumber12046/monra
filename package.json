@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Mono Repo Administrator",
   "bin": {
-    "monra": "dist/index.js"
+    "monra": "index.ts"
   },
   "scripts": {
     "dev": "tsc -w"
   },
-  "main": "./dist/index.js",
+  "main": "./index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Thebigbot0000/monra.git"
@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/Thebigbot0000/monra/issues"
   },
-  "homepage": "https://github.com/Thebigbot0000/monra#readme"
+  "homepage": "https://github.com/Thebigbot0000/monra#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
 }

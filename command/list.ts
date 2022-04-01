@@ -20,6 +20,6 @@ export const list = (x: string) => {
     files.map(file => {
         const pj = JSON.parse(fs.readFileSync(monra?.directory+"/"+file+"/package.json", "utf8"));
         console.log(`\x1b[1m${pj?.name}\x1b[0m
-└─v${pj?.verison}`)
+└─v${pj?.version}`)
     })
 }

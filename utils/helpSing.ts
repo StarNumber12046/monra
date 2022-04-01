@@ -25,20 +25,9 @@ import { exit } from "process";
 */
 
 export const helpSing = (code: number) => {
-    const packagesjson = JSON.parse(fs.readFileSync("package.json", "utf8"));
     switch (code) {
         case 0:
-            console.log(`\x1b[1m${packagesjson?.name}\x1b[0m - \x1b[1mv${packagesjson?.version}\x1b[0m
-├─ \x1b[2mmonra\x1b[0m \x1b[32minit\x1b[0m
-├─ \x1b[2mmonra\x1b[0m \x1b[32mcreate\x1b[0m
-├─ \x1b[2mmonra\x1b[0m \x1b[32mlist\x1b[0m
-├─ \x1b[2mmonra\x1b[0m \x1b[32mpublish\x1b[0m
-├─ \x1b[2mmonra\x1b[0m \x1b[32mrun\x1b[0m
-├─ \x1b[2mmonra\x1b[0m \x1b[32mversion\x1b[0m
-├─ \x1b[2mmonra\x1b[0m \x1b[32mtouch\x1b[0m
-├─ \x1b[2mmonra\x1b[0m \x1b[32mmkdir\x1b[0m
-├─ \x1b[2mmonra\x1b[0m \x1b[32mrm\x1b[0m
-└─ \x1b[2mmonra\x1b[0m \x1b[32mdelete\x1b[0m`)
+            console.log("")
                 
         break;
         case 1:
