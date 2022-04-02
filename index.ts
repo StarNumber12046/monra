@@ -15,7 +15,7 @@ import { mkdir } from "./command/mkdir";
 import { rm } from "./command/rm";
 import { rmdir } from "./command/rmdir";
 
-new Command({ name: "init", aliases: ["i"] })
+new Command({ name: "init", aliases: ["i", "-i", "--init"] })
 .on(res => init(res.args));
 
 new Command({ name: "create", aliases: ["build"] })
@@ -24,7 +24,7 @@ new Command({ name: "create", aliases: ["build"] })
 new Command({ name: "delete", aliases: ["d"] })
 .on(res => _delete(res.args));
 
-new Command({ name: "publish", aliases: ["--publish", "-p"] })
+new Command({ name: "publish", aliases: ["--publish", "-p", "p"] })
 .on(res => publish(res.args))
 
 new Command({ name: "version", aliases: ["--version", "-v"] })
