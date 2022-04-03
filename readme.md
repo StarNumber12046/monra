@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Monra</h1>
   </br>
-  <p>Cli to edit and create a mono repo project</p>
+  <p>A cli program to edit and create a mono repo project</p>
 </div>
 <div align="center">
   </br>
@@ -24,14 +24,14 @@ pnpm add -g monra
   </br>
   <h1>Command</h1>
   </br>
-  <p>All monra commands for make and edit your project</p>
+  <p>All Monra commands for manage your project</p>
 </div>
 
 <div align="center">
   </br>
   <h2>help</h2>
   </br>
-  <p>Get the list of all commands in monra</p>
+  <p>Get the list of all commands in Monra</p>
 </div>
 
 ```bash
@@ -43,7 +43,7 @@ monra help
   </br>
   <h2>init</h2>
   </br>
-  <p>Initialize a project with monra</p>
+  <p>Initialize a project with Monra</p>
 </div>
 
 ```bash
@@ -55,7 +55,7 @@ monra init
   </br>
   <h2>create</h2>
   </br>
-  <p>Create a new package in the appropriate folder</p>
+  <p>Create a new package the in specific folder</p>
 </div>
 
 ```bash
@@ -91,7 +91,7 @@ monra publish
   </br>
   <h2>version</h2>
   </br>
-  <p>Get the version you are using of monra</p>
+  <p>Get the version of current installed Monra</p>
 </div>
 
 ```bash
@@ -103,7 +103,7 @@ monra version
   </br>
   <h2>list</h2>
   </br>
-  <p>Get the list of all packages in the directory</p>
+  <p>List all packages in the directory</p>
 </div>
 
 ```bash
@@ -115,13 +115,13 @@ monra list
   </br>
   <h2>run</h2>
   </br>
-  <p>He ran a command in one package, or in all packages</p>
+  <p>Run a command in one package, or in all packages</p>
 </div>
 
 ```bash
 monra run [directory-name || --global]
 ```
-**Options**: -g or --global = He ran a command in all packages
+**Options**: -g or --global = Run a command in all packages
 **Aliases**: r
 
 <div align="center">
@@ -134,7 +134,7 @@ monra run [directory-name || --global]
 ```bash
 monra touch [directory-name || --global]
 ```
-**Options**: -g or --global = He create file in all packages
+**Options**: -g or --global = Create file in all packages
 **Aliases**: t
 
 <div align="center">
@@ -147,7 +147,7 @@ monra touch [directory-name || --global]
 ```bash
 monra mkdir [directory-name || --global]
 ```
-**Options**: -g or --global = He create directory in all packages
+**Options**: -g or --global = Create a directory in all packages
 **Aliases**: mk
 
 <div align="center">
@@ -160,7 +160,7 @@ monra mkdir [directory-name || --global]
 ```bash
 monra rm [directory-name || --global]
 ```
-**Options**: -g or --global = He remove file in all packages
+**Options**: -g or --global = Remove file in all packages
 
 <div align="center">
   </br>
@@ -172,14 +172,14 @@ monra rm [directory-name || --global]
 ```bash
 monra rmdir [directory-name || --global]
 ```
-**Options**: -g or --global = He remove directory in all packages
+**Options**: -g or --global = Remove directory in all packages
 
 
 <div align="center">
   </br>
   <h1>Help Individual</h1>
   </br>
-  <p>Get individual help for all commands</p>
+  <p>Get help for a specific command</p>
 </div>
 
 ```bash

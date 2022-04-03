@@ -9,8 +9,8 @@ import { exit } from 'process';
 
 export class ErrorInit {
     constructor() {
-        console.log("\x1b[31m[monra]\x1b[0m monra.json does not exist");
-        let yn = question('\n\x1b[2m[monra]\x1b[0m \x1b[1mDo you want init progect? (y/n) ');
+        console.log("\x1b[31m[monra]\x1b[0m monra.json doesn't exist");
+        let yn = question('\n\x1b[2m[monra]\x1b[0m \x1b[1mDo you want to init project? (y/n) ');
         if (yn == "y" || yn == "Y" || yn == "" || yn == "yes" || yn == "Yes") {
             let name = question('\x1b[2m[1/4]\x1b[0m \x1b[1mName:\x1b[0m (root) ');
             if (!name) name = "root";

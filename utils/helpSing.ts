@@ -31,20 +31,20 @@ export const helpSing = (code: number) => {
                 
         break;
         case 1:
-            console.log(`\x1b[1mInitialize a project with monra\x1b[0m
+            console.log(`\x1b[1mInitialize a project with Monra\x1b[0m
 \x1b[33mUsage\x1b[0m: monra init
 \x1b[33mAliases\x1b[0m: i
 \x1b[33mOptions\x1b[0m: null`)
         break;
         case 2:
-            console.log(`\x1b[1mCreate a new package in the appropriate folder\x1b[0m
+            console.log(`\x1b[1mCreate a new package the in specific folder\x1b[0m
 \x1b[33mUsage\x1b[0m: monra create [directory-name]
 \x1b[33mAliases\x1b[0m: build
 \x1b[33mOptions\x1b[0m: null`)
 
         break;
         case 3:
-            console.log(`\x1b[1mGet the list of all packages in the directory\x1b[0m
+            console.log(`\x1b[1mList all packages in the directory\x1b[0m
 \x1b[33mUsage\x1b[0m: list
 \x1b[33mAliases\x1b[0m: -l, --list
 \x1b[33mOptions\x1b[0m: null`)
@@ -58,14 +58,14 @@ export const helpSing = (code: number) => {
 
         break;
         case 5:
-            console.log(`\x1b[1mHe ran a command in one package, or in all packages\x1b[0m
+            console.log(`\x1b[1mRun a command in one package, or in all packages\x1b[0m
 \x1b[33mUsage\x1b[0m: monra run [directory || -g]
 \x1b[33mAliases\x1b[0m: r
 \x1b[33mOptions\x1b[0m: -g, --global`)
 
         break;
         case 6:
-            console.log(`\x1b[1mGet the version you are using of monra\x1b[0m
+            console.log(`\x1b[1mGet the version of current installed Monra\x1b[0m
 \x1b[33mUsage\x1b[0m: monra version
 \x1b[33mAliases\x1b[0m: -v, --version
 \x1b[33mOptions\x1b[0m: null`)
