@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Mono Repo Administrator",
   "bin": {
-    "monra": "index.ts"
+    "monra": "./dist/index.js"
   },
   "scripts": {
     "dev": "tsc -w"
