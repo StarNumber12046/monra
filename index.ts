@@ -13,6 +13,7 @@ import { touch } from "./command/touch";
 import { mkdir } from "./command/mkdir";
 import { rm } from "./command/rm";
 import { rmdir } from "./command/rmdir";
+import { registry } from "./command/registry";
 
 new Command({ name: "init", aliases: ["i", "-i", "--init"] })
 .on(res => init(res.args));
@@ -49,3 +50,6 @@ new Command({ name: "rm", aliases: [] })
 
 new Command({ name: "rmdir", aliases: [] })
 .on(res => rmdir(res.args))
+
+new Command({ name: "registry", aliases: ["-r", "--registry"] })
+.on(res => registry(res.args))

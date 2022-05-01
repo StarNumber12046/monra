@@ -51,7 +51,8 @@ export const init = (x: string) => {
   "name": "root",
   "version": "1.0.0",
   "client": "npm",
-  "directory": "packages"
+  "directory": "packages",
+  "registry": "https://registry.npmjs.org/"
 }`
     );
 

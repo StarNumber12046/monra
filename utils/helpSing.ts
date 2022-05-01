@@ -22,6 +22,7 @@ import { exit } from "process";
 9: "rm"
 10: "delete"
 11: "rmdir"
+12: "registry"
 */
 
 export const helpSing = (code: number) => {
@@ -106,8 +107,16 @@ export const helpSing = (code: number) => {
 \x1b[33mOptions\x1b[0m: -g, --global`)
 
         break;
+        case 12:
+            console.log(`\x1b[1mGet packages registry\x1b[0m
+\x1b[33mUsage\x1b[0m: monra registry
+\x1b[33mAliases\x1b[0m: -r, --registry
+\x1b[33mOptions\x1b[0m: -e, --edit
+\x1b[Tip\x1b[0m: use -e to edit the registry (-e [url])`)
+
+        break;
         default:
             console.log("Code?")
-            
+        break;
     }
 }
