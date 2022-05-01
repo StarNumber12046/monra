@@ -6,7 +6,6 @@ import { create } from "./command/create";
 import { init } from "./command/init";
 import { _delete } from "./command/delete";
 import { publish } from "./command/publish";
-import { exit } from "node:process";
 import { list } from "./command/list";
 import { help } from "./command/help";
 import { run } from "./command/run";

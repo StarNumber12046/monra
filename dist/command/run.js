@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.run = void 0;
 const tslib_1 = require("tslib");
 // @ts-check
-const fs = (0, tslib_1.__importStar)(require("fs"));
+const fs = tslib_1.__importStar(require("fs"));
 const isInit_1 = require("../utils/isInit");
 const readline_sync_1 = require("readline-sync");
 const process_1 = require("process");

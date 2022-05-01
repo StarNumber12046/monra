@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports._delete = void 0;
 const tslib_1 = require("tslib");
-const fs = (0, tslib_1.__importStar)(require("node:fs"));
+const fs = tslib_1.__importStar(require("node:fs"));
 const node_child_process_1 = require("node:child_process");
 const node_process_1 = require("node:process");
 const readline_sync_1 = require("readline-sync");

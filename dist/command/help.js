@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.help = void 0;
 const tslib_1 = require("tslib");
-const packagesjson = (0, tslib_1.__importStar)(require("../../package.json"));
+const packagesjson = tslib_1.__importStar(require("../package.json"));
 /**
  * @name Help
  * @param {string} x - res.args

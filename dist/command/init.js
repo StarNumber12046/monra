@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.init = void 0;
 const tslib_1 = require("tslib");
-const fs = (0, tslib_1.__importStar)(require("node:fs"));
+const fs = tslib_1.__importStar(require("node:fs"));
 const node_process_1 = require("node:process");
 const readline_sync_1 = require("readline-sync");
 const helpSing_1 = require("../utils/helpSing");
@@ -15,6 +15,33 @@ const helpSing_1 = require("../utils/helpSing");
 const init = (x) => {
     if (x[1] == "--help" || x[1] == "-h") {
         (0, helpSing_1.helpSing)(1);
+        (0, node_process_1.exit)();
+    }
+    if (x[1] == "-y" || x[1] == "--yes") {
+        console.log(`
+      \x1b[2m[1/4]\x1b[0m \x1b[1mName:\x1b[0m (root) root
+
+      \x1b[2m[2/4]\x1b[0m \x1b[1mVersion:\x1b[0m (1.0.0) 1.0.0
+
+      \x1b[2m[3/4]\x1b[0m \x1b[1mDirectory:\x1b[0m (packages) packages
+        
+      \x1b[2m[4/4]\x1b[0m \x1b[1mClient:\x1b[0m (npm) npm
+      `);
+        fs.appendFileSync("package.json", JSON.stringify({
+            name: "root",
+            version: "1.0.0",
+            private: true,
+            dependencies: {},
+            workspaces: ["packages/*"],
+        }));
+        fs.appendFileSync("monra.json", JSON.stringify({
+            name: "root",
+            version: "1.0.0",
+            client: "npm",
+            directory: "packages",
+        }));
+        fs.mkdirSync("packages");
+        console.log("\n\x1b[32m[monra]\x1b[0m Create mono repo project!");
         (0, node_process_1.exit)();
     }
     let name = (0, readline_sync_1.question)("\x1b[2m[1/4]\x1b[0m \x1b[1mName:\x1b[0m (root) ");

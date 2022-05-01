@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.list = void 0;
 const tslib_1 = require("tslib");
-const fs = (0, tslib_1.__importStar)(require("node:fs"));
+const fs = tslib_1.__importStar(require("node:fs"));
 const node_process_1 = require("node:process");
 const helpSing_1 = require("../utils/helpSing");
 /**

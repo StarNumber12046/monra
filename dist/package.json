@@ -1,0 +1,33 @@
+{
+    "name": "monra",
+    "version": "2.0.0",
+    "description": "Mono Repo Administrator",
+    "bin": {
+        "monra": "./dist/index.js"
+    },
+    "scripts": {
+        "dev": "tsc -w"
+    },
+    "main": "./index.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Thebigbot0000/monra.git"
+    },
+    "author": "Thebigbot",
+    "license": "MIT",
+    "dependencies": {
+        "@pnpm/local-resolver": "^8.0.0",
+        "@types/node": "^17.0.23",
+        "nvea": "^1.0.1",
+        "readline-sync": "^1.4.10",
+        "ts-node": "^10.7.0",
+        "tslib": "^2.3.1"
+    },
+    "bugs": {
+        "url": "https://github.com/Thebigbot0000/monra/issues"
+    },
+    "homepage": "https://github.com/Thebigbot0000/monra#readme",
+    "devDependencies": {
+        "typescript": "^4.6.3"
+    }
+}

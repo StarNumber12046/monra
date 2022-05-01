@@ -1,6 +1,7 @@
 {
-    "name": "monra",
-    "version": "1.0.0",
-    "client": "yarn",
-    "directory": "packages"
+  "name": "root",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {},
+  "workspaces": ["packages/*"]
 }

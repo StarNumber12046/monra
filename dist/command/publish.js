@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.publish = void 0;
 const tslib_1 = require("tslib");
 const child_process_1 = require("child_process");
-const fs = (0, tslib_1.__importStar)(require("node:fs"));
+const fs = tslib_1.__importStar(require("node:fs"));
 const process_1 = require("process");
 const helpSing_1 = require("../utils/helpSing");
 const isInit_1 = require("../utils/isInit");

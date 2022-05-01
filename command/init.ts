@@ -17,6 +17,45 @@ export const init = (x: string) => {
     helpSing(1);
     exit();
   }
+
+  if (x[1] == "-y" || x[1] == "--yes") {
+    console.log(
+      `
+\x1b[2m[1/4]\x1b[0m \x1b[1mName:\x1b[0m (root) root
+
+\x1b[2m[2/4]\x1b[0m \x1b[1mVersion:\x1b[0m (1.0.0) 1.0.0
+
+\x1b[2m[3/4]\x1b[0m \x1b[1mDirectory:\x1b[0m (packages) packages
+
+\x1b[2m[4/4]\x1b[0m \x1b[1mClient:\x1b[0m (npm) npm`
+    );
+    fs.appendFileSync(
+      "package.json",
+      `{
+  "name": "root",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {},
+  "workspaces": ["packages/*"]
+}`
+    );
+
+    fs.appendFileSync(
+      "monra.json",
+      `{
+  "name": "root",
+  "version": "1.0.0",
+  "client": "npm",
+  "directory": "packages"
+}`
+    );
+
+    fs.mkdirSync("packages");
+
+    console.log("\n\x1b[32m[monra]\x1b[0m Create mono repo project!");
+    exit();
+  }
+
   let name = question("\x1b[2m[1/4]\x1b[0m \x1b[1mName:\x1b[0m (root) ");
   if (!name) name = "root";
   let v = question("\n\x1b[2m[2/4]\x1b[0m \x1b[1mVersion:\x1b[0m (1.0.0) ");
@@ -29,25 +68,26 @@ export const init = (x: string) => {
     "\n\x1b[2m[4/4]\x1b[0m \x1b[1mUse yarn, pnpm or npm:\x1b[0m (npm) "
   );
   if (!client) client = "npm";
+
   fs.appendFileSync(
     "package.json",
-    JSON.stringify({
-      name: name.toLowerCase(),
-      version: v,
-      private: true,
-      dependencies: {},
-      workspaces: [dir.toLowerCase() + "/*"],
-    })
+    `{
+  "name": "${name.toLowerCase()}",
+  "version": "${v.toLowerCase()}",
+  "private": true,
+  "dependencies": {},
+  "workspaces": ["${dir.toLowerCase()}/*"]
+}`
   );
 
   fs.appendFileSync(
     "monra.json",
-    JSON.stringify({
-      name: name.toLowerCase(),
-      version: v.toLowerCase(),
-      client: client.toLowerCase(),
-      directory: dir.toLowerCase(),
-    })
+    `{
+  "name": "${name.toLowerCase()}",
+  "version": "${v.toLowerCase()}",
+  "client": "${client.toLowerCase()}",
+  "directory": "${dir.toLowerCase()}"
+}`
   );
 
   fs.mkdirSync(dir.toLowerCase());

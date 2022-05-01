@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.version = void 0;
 const tslib_1 = require("tslib");
 const process_1 = require("process");
-const packagesjson = (0, tslib_1.__importStar)(require("../../package.json"));
+const packagesjson = tslib_1.__importStar(require("../package.json"));
 const helpSing_1 = require("../utils/helpSing");
 /**
  * @param {string} x - res.args
