@@ -18,6 +18,11 @@ export const init = (x: string) => {
     exit();
   }
 
+  if (fs.existsSync("package.json") || fs.existsSync("monra.json")) {
+    console.log("\x1b[31m[monra]\x1b[0m Project already initialized");
+    exit();
+  }
+
   if (x[1] == "-y" || x[1] == "--yes") {
     console.log(
       `
@@ -86,7 +91,8 @@ export const init = (x: string) => {
   "name": "${name.toLowerCase()}",
   "version": "${v.toLowerCase()}",
   "client": "${client.toLowerCase()}",
-  "directory": "${dir.toLowerCase()}"
+  "directory": "${dir.toLowerCase()}",
+  "registry": "https://registry.npmjs.org/"
 }`
   );
 
