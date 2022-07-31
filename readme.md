@@ -185,4 +185,4 @@ monra rmdir [directory-name || --global]
 ```bash
 monra [command] -h
 ```
-**Aliases**: --help
+**Aliasess**: --help
