@@ -24,7 +24,7 @@ pnpm add -g monra
   </br>
   <h1>Command</h1>
   </br>
-  <p>All Monra commands for manage your project</p>
+  <p>All Monra commands to manage your project</p>
 </div>
 
 <div align="center">
